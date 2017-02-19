@@ -14,7 +14,7 @@
                    maxlength="30"
                    #userName="ngModel">
             <!--<div [hidden]="userName.valid || userName.pristine" class="alert alert-danger"> 用户名 为必填项</div>-->
-            <div [hidden]="validUserName(form,userName)" class="alert alert-danger"> 用户名不合法，字符长度为2~30位</div>
+            <div [hidden]="userName.valid" class="alert alert-danger"> 用户名不合法，字符长度为2~30位</div>
           </div>
 
         </div>

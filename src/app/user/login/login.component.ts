@@ -21,8 +21,8 @@ export class LoginComponent implements  OnInit {
   public doLogin():void{
     this.loginService.login(this.user);
   }
-  public validUserName(form,userName){
-    console.log(form,userName);
-  }
+  // public validUserName(form,userName){
+  //   console.log(form,userName);
+  // }
 
 }
