@@ -9,16 +9,17 @@ import {User} from "../model/user-model";
 })
 
 export  class ForgetPwdComponent implements OnInit{
-  public user :User = new User()
-  public message:string
-  public messageType:string
+  public user :User = new User();
+  public message:string;
+  public messageType:string;
 
   constructor( public forgetPwdService:ForgetPwdService){}
 
   ngOnInit(){}
 
   public sendValidationEmail():void{
-    this.forgetPwdService.sendValidationEmail(this.user.email).subscribe(data=>{
+    this.forgetPwdService.sendValidationEmail(this.user.email)
+      .subscribe(data=>{
       this.message = data.message;
       this.messageType = 'success';
     },error=>{
