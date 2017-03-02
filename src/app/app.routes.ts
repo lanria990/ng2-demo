@@ -15,4 +15,10 @@ export const appRoutes = [{
 },{
   path: 'forgetpwd',
   component: ForgetPwdComponent
+},{
+  path:'home',
+  loadChildren:'./home/home.module#HomeModule'
+},{
+  path:'posts',
+  loadChildren:'./home/home.module#HomeModule'
 }]

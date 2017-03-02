@@ -1,30 +1,36 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
-import {HttpModule} from '@angular/http';
+import {ReactiveFormsModule} from '@angular/forms';
+import {HttpModule, JsonpModule} from '@angular/http';
 import {RouterModule} from '@angular/router'
 
 
-import {appRoutes} from './app.routes'
+import {SharedModule} from "./shared/shared.module";
 import {AppComponent} from './app.component';
-import {LoginComponent} from "./user/login/login.component";
+import {appRoutes} from './app.routes'
 import {LoginService} from "./user/login/login.service";
+import {ForgetPwdService} from "./user/forget-pwd/forget-pwd.service";
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    // LoginComponent,
+    // ForgetPwdComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
+    RouterModule,
+    ReactiveFormsModule,
     HttpModule,
+    JsonpModule,
+    SharedModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
-    LoginService
+    LoginService,
+    ForgetPwdService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {
 }
