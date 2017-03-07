@@ -1,0 +1,6 @@
+<div [formGroup] = "form">
+  <label for="" class="{{field.className}} control-label">
+    <span ng-show="!!options.label" class="text-danger"> {{field.label}}</span>
+    <span ng-bind-html="options.label">{{field.label}}</span>
+  </label>
+</div>
