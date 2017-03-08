@@ -24,11 +24,17 @@ export class PostlistComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log('searchText',this.searchText);
+    this.activeRoute.params.subscribe(params=>{
+      console.log('params',params);
+      this.loadData(this.searchText,this.currentPage);
+    })
+
     this.searchTextStream
       .debounceTime(500)
       .distinctUntilChanged()
       .subscribe(searchText => {
-        console.log(this.searchText);
+        console.log('searchText',this.searchText);
         this.loadData(this.searchText, this.currentPage)
       });
   }

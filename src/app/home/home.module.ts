@@ -13,7 +13,7 @@ import {SharedModule} from "../shared/shared.module";
   exports:[],
   declarations:[
     HomeComponent,
-    CommonModule,
+    // CommonModule,
   ],
   providers:[],
 })

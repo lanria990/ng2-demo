@@ -7,7 +7,7 @@ import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class PostlistService {
-  public postlistUrl = 'src/mock-data/postlist-mock.json';
+  public postlistUrl = 'mock-data/postlist-mock.json';
 
   constructor(public http: Http) {
   }

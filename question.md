@@ -8,3 +8,16 @@
 
 2. DI ，service注入问题
 
+3.mock-data 文件无法获取
+
+```javascript
+// angular-cli.json assets
+{
+  "assets": [
+          "assets",
+          "favicon.ico",
+          "mock-data"
+  ]  
+}
+```
+[ angular-cli assets](https://github.com/angular/angular-cli/blob/master/docs/documentation/stories/asset-configuration.md)
