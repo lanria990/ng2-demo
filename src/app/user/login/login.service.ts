@@ -17,13 +17,19 @@ export  class LoginService{
 
   login(user){
     console.log(user);
-   return  this.http.post(this.loginUrl,user).map((response:Response)=>{
+   return  this.http.get(this.loginUrl,user).map((response:Response)=>{
       let user = response.json();
       console.log('user data',user);
       if (user && user.token){
-
+        localStorage.setItem("currentUser",JSON.stringify(user));
       }
       return response;
-   }) .subscribe(data=>console.log('login success',data),error=>console.log(error))
+   })
+     //.subscribe(data=>console.log('login success',data),error=>console.log(error))
+  }
+
+  logout(){
+    localStorage.removeItem('currentUser');
+    this.subject.next(Object.assign({}));
   }
 }

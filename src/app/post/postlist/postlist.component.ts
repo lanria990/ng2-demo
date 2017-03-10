@@ -45,11 +45,13 @@ export class PostlistComponent implements OnInit {
 
     return this.postlistService.findPostlist(searchText, page).subscribe(res => {
         this.totalItems = res['total'];
-        this.items = res["items"].slice(offset, end > this.totalItems ? this.totalItems : end);
+        this.items = res['items'].slice(offset, end > this.totalItems ? this.totalItems : end);
       }, error => {
         console.log(error)
-      },
-      () => {
       })
+  }
+
+  public  pageChanged(event:any):void{
+    this.router.navigateByUrl(`posts/page/${event.page}`)
   }
 }

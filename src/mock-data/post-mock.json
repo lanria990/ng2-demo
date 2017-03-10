@@ -1,0 +1,9 @@
+{
+  "id": 1,
+  "author": "大漠穷秋",
+  "postTime": "2016-12-12 12:12:12",
+  "readTimes": 999999,
+  "commentTimes": 99999,
+  "title": "Angular2 heroes",
+  "text": "<p>The heroes feature module is ready, but the application doesn't know about the <code>HeroesModule</code> yet.  Open <code>app.module.ts</code> and revise it as follows.</p><p>Import the <code>HeroesModule</code> and add it to the <code>imports</code> array in the <code>@NgModule</code> metadata of the <code>AppModule</code></p><p>Remove the <code>HeroListComponent</code> from the <code>AppModule</code>'s <code>declarations</code> because it's now provided by the <code>HeroesModule</code>.This is important. There can be only <em>one</em> owner for a declared component.  In this case, the <code>Heroes</code> module is the owner of the <code>Heroes</code> components and is making them available to  components in the <code>AppModule</code> via the <code>HeroesModule</code>.</p>"
+}

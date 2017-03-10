@@ -1,0 +1,25 @@
+
+.main-container {
+  min-height: calc(100vh - 100px);
+}
+.main-nav{
+  background: #337ab7;
+
+}
+.navbar-brand-my{
+  color: #ffffff;
+}
+.navbar-brand-my:hover{
+  background: #1a4c81;
+}
+.active .navbar-brand-my{
+  background: #1a4c81;
+}
+
+.footer{
+  height: 100px;
+  line-height: 100px;
+  background: #263238;
+  color: #fff;
+  overflow: hidden;
+}

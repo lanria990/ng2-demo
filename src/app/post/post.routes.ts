@@ -8,6 +8,6 @@ export const postRoutes = [  {
   path: 'page/:page',
   component: PostlistComponent
 },{
-  path: 'page/:id',
+  path: 'detail/:id',
   component: PostDetailComponent
 }]

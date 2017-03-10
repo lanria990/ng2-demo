@@ -22,7 +22,9 @@ export class LoginComponent implements  OnInit {
   }
 
   public doLogin():void{
-    this.loginService.login(this.user);
+    this.loginService.login(this.user).subscribe(data=>{
+      this.router.navigateByUrl('/home')
+    },error=>console.log(error));
   }
   // public validUserName(form,userName){
   //   console.log(form,userName);

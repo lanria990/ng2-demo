@@ -10,10 +10,15 @@ import {AppComponent} from './app.component';
 import {appRoutes} from './app.routes'
 import {LoginService} from "./user/login/login.service";
 import {ForgetPwdService} from "./user/forget-pwd/forget-pwd.service";
+import {RegisterComponent} from "./user/register/register.component";
+import {RegisterService} from "./user/register/register.service";
+import {EqualValidator} from "./user/directives/equal-validator.directive";
 
 @NgModule({
   declarations: [
     AppComponent,
+    RegisterComponent,
+    EqualValidator,
     // LoginComponent,
     // ForgetPwdComponent
   ],
@@ -28,7 +33,8 @@ import {ForgetPwdService} from "./user/forget-pwd/forget-pwd.service";
   ],
   providers: [
     LoginService,
-    ForgetPwdService
+    ForgetPwdService,
+    RegisterService
   ],
   bootstrap: [AppComponent],
 })

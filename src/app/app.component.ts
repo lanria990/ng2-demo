@@ -41,11 +41,19 @@ export class AppComponent {
       },
       error => console.error(error)
     );
+
+    console.log('currentUser',this.currentUser)
   }
 
   ngOnDestroy() {
     if (this.globalClickCallbackFn) {
       this.globalClickCallbackFn();
     }
+  }
+
+  public doLogout():void{
+    // LocalStorage
+    this.loginService.logout();
+    this.router.navigateByUrl('');
   }
 }

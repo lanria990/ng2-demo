@@ -4,7 +4,7 @@ import {Observable} from "rxjs";
 import {Post} from "../model/post-model";
 @Injectable()
 export class PostDetailService {
-  public detailUrl = 'src/mock-data/post-mock.json';
+  public detailUrl = 'mock-data/post-mock.json';
 
   constructor(public http: Http) {
   }

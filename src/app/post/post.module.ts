@@ -6,8 +6,15 @@ import {PostlistComponent} from "./postlist/postlist.component";
 import {SharedModule} from "../shared/shared.module";
 import {PostDetailComponent} from "./post-detail/post-detail.component";
 import {PostDetailService} from "./post-detail/post-detail.service";
+import { PaginationModule} from "ng2-bootstrap";
+
 @NgModule({
-  imports: [SharedModule,RouterModule, RouterModule.forChild(postRoutes)],
+  imports: [
+    SharedModule,
+    RouterModule,
+    PaginationModule.forRoot(),
+    RouterModule.forChild(postRoutes)
+  ],
   exports: [],
   declarations: [PostlistComponent,PostDetailComponent],
   providers: [PostlistService,PostDetailService]
