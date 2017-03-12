@@ -21,3 +21,7 @@
 }
 ```
 [ angular-cli assets](https://github.com/angular/angular-cli/blob/master/docs/documentation/stories/asset-configuration.md)
+
+4. inline template  Cannot read property 'push' of undefined
+
+指令命名重复问题导致的

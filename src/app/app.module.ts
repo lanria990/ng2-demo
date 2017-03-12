@@ -13,12 +13,17 @@ import {ForgetPwdService} from "./user/forget-pwd/forget-pwd.service";
 import {RegisterComponent} from "./user/register/register.component";
 import {RegisterService} from "./user/register/register.service";
 import {EqualValidator} from "./user/directives/equal-validator.directive";
+import {ChartComponent} from "./chart/chart.component";
+import { EchartsAppDirective} from "./chart/directives/echart.directive";
+import {ChartService} from "./chart/chart.service";
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     EqualValidator,
+    EchartsAppDirective,
+    ChartComponent
     // LoginComponent,
     // ForgetPwdComponent
   ],
@@ -34,7 +39,8 @@ import {EqualValidator} from "./user/directives/equal-validator.directive";
   providers: [
     LoginService,
     ForgetPwdService,
-    RegisterService
+    RegisterService,
+    ChartService,
   ],
   bootstrap: [AppComponent],
 })

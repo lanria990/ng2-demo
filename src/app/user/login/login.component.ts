@@ -2,6 +2,7 @@ import { Component,OnInit } from '@angular/core'
 import {Router} from '@angular/router'
 import { LoginService } from './login.service'
 import {User} from "../model/user-model"
+import {Observable, Subject} from "rxjs";
 
 @Component({
   selector: 'app-user-login',
@@ -12,6 +13,7 @@ import {User} from "../model/user-model"
 export class LoginComponent implements  OnInit {
   // public user ={UserName:string,password:string};
   public user:User = new User();
+  public  subject :Subject<User> = new Subject<User>();
   constructor(
     public loginService:LoginService,
     public router:Router
@@ -23,8 +25,13 @@ export class LoginComponent implements  OnInit {
 
   public doLogin():void{
     this.loginService.login(this.user).subscribe(data=>{
-      this.router.navigateByUrl('/home')
+      console.log("login success>"+data);
+      // this.router.navigateByUrl('/home')
     },error=>console.log(error));
+  }
+
+  public get CurrentUser():Observable<User>{
+    return this.subject.asObservable();
   }
   // public validUserName(form,userName){
   //   console.log(form,userName);

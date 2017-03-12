@@ -22,6 +22,7 @@ export  class LoginService{
       console.log('user data',user);
       if (user && user.token){
         localStorage.setItem("currentUser",JSON.stringify(user));
+        this.subject.next(Object.assign({},user));
       }
       return response;
    })

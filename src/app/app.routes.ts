@@ -4,6 +4,7 @@ import {AppComponent} from './app.component'
 import  {LoginComponent} from  './user/login/login.component'
 import {ForgetPwdComponent} from "./user/forget-pwd/forget-pwd.component"
 import {RegisterComponent} from "./user/register/register.component";
+import {ChartComponent} from "./chart/chart.component";
 
 
 export const appRoutes = [{
@@ -25,4 +26,7 @@ export const appRoutes = [{
 }, {
   path: 'posts',
   loadChildren: './home/home.module#HomeModule'
+},{
+  path:'echart',
+  component:ChartComponent
 }]

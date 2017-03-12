@@ -2,6 +2,7 @@ import {Component, Renderer, ElementRef} from '@angular/core';
 import {Router, ActivatedRoute, ActivatedRouteSnapshot, RouterStateSnapshot, RouterState} from "@angular/router";
 import {LoginService} from "./user/login/login.service";
 import {User} from "./user/model/user-model";
+import {RegisterService} from "./user/register/register.service";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -15,7 +16,9 @@ export class AppComponent {
               public renderer: Renderer,
               public router: Router,
               public activatedRoute: ActivatedRoute,
-              public loginService: LoginService) {
+              public loginService: LoginService,
+              public registerService:RegisterService
+  ) {
   }
 
   ngOnInit() {
@@ -23,7 +26,8 @@ export class AppComponent {
       console.log("全局监听点击事件>" + event);
     });
     this.currentUser = JSON.parse(localStorage.getItem("currentUser"));
-    this.loginService.currentUser.merge(this.loginService.currentUser).subscribe(
+    console.log('currentUser1',this.currentUser)
+    this.loginService.currentUser.merge(this.registerService.currentUser).subscribe(
       data => {
         this.currentUser = data;
         let activatedRouteSnapshot: ActivatedRouteSnapshot = this.activatedRoute.snapshot;
