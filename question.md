@@ -25,3 +25,12 @@
 4. inline template  Cannot read property 'push' of undefined
 
 指令命名重复问题导致的
+
+5. Cannot find module 'echarts'
+
+node 版本需要 6.9.0+
+
+6.升级@angular-cli  报错 node-gyp gyp verb check python checking for Python executable "python2" in the PATH
+
+node-gyp 4.0 修改NVM_NODEJS_ORG_MIRROR 为 NODEJS_ORG_MIRROR变量，nvm安装报错，待发布新版本
+

@@ -1,26 +1,33 @@
-import {Directive, OnInit, Input, ElementRef, SimpleChanges} from "@angular/core";
-import * as echarts  from  'echarts';
+import {Directive, OnInit, Input, ElementRef, HostListener} from "@angular/core";
+import * as echarts from 'echarts';
 
 @Directive({
   selector:'echart'
 })
 
 export  class EchartsAppDirective implements OnInit{
-  @Input('option') option:any;
-  public  chart:any;
-  constructor(private  el :ElementRef){}
-  ngOnInit(){
-    this.chart = echarts.init(this.el.nativeElement);
-    this.chart.setOption(this.option);
+
+  // @Input('option') option:any;
+  @Input('option') set option(opt:any){
+    console.log('set',opt)
+    opt = opt ||{};
+    opt.chart = opt.chart ||{};
+    opt.chart.renderTo = this.el;
+    if (!this.chart){
+      this.chart = echarts.init(this.el.nativeElement);
+      this.chart.setOption(opt);
+    }else{
+      this.chart.setOption(opt);
+    }
   }
-  ngOnChanges(changes: SimpleChanges){
-    console.log('changes',changes,this.chart )
-    this.chart  && this.chart.setOption(this.changes.option.currentValue);
-    // for (let propName in changes) {
-    //   let chng = changes[propName];
-    //   let cur  = JSON.stringify(chng.currentValue);
-    //   let prev = JSON.stringify(chng.previousValue);
-    //   this.changeLog.push(`${propName}: currentValue = ${cur}, previousValue = ${prev}`);
-    // }
+  public  chart:any;
+  constructor(private el: ElementRef) {}
+  //
+  public ngOnInit() {
+    // echarts.init(this.el.nativeElement).setOption(this.option);
+  }
+
+  ngOnDestroy(){
+    this.chart && this.chart.destroy();
   }
 }

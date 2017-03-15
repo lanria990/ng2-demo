@@ -9,10 +9,10 @@
     <div class="collapse navbar-collapse navbar-responsive-collapse" aria-expanded="false">
       <ul class="nav navbar-nav">
         <li class="dropdown" routerLinkActive="active">
-          <a routerLink="posts" class="navbar-brand navbar-brand-my">articles</a>
+          <a routerLink="posts" class=" navbar-brand-my">articles</a>
         </li>
-        <li class="dropdown" *ngIf="currentUser?.username">
-          <a routerLink="echart">统计</a>
+        <li class="dropdown" >
+          <a routerLink="echart" class=" navbar-brand-my">统计</a>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right" *ngIf="!currentUser?.userName">

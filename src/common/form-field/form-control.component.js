@@ -12,10 +12,10 @@ var FormControlComponent = (function () {
     FormControlComponent.prototype.ngOnInit = function () { };
     __decorate([
         Input()
-    ], FormControlComponent.prototype, "field", void 0);
+    ], FormControlComponent.prototype, "field");
     __decorate([
         Input()
-    ], FormControlComponent.prototype, "form", void 0);
+    ], FormControlComponent.prototype, "form");
     FormControlComponent = __decorate([
         core_1.Component({
             selector: 'form-control',
