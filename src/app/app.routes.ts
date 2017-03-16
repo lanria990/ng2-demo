@@ -1,4 +1,4 @@
-import {RouterModule} from '@angular/router'
+import {RouterModule, Routes} from '@angular/router'
 
 import {AppComponent} from './app.component'
 import  {LoginComponent} from  './user/login/login.component'
@@ -7,7 +7,7 @@ import {RegisterComponent} from "./user/register/register.component";
 import {ChartComponent} from "./chart/chart.component";
 
 
-export const appRoutes = [{
+export const appRoutes: Routes= [{
   path: '',
   redirectTo: 'posts',
   pathMatch: 'full'
@@ -27,6 +27,12 @@ export const appRoutes = [{
   path: 'posts',
   loadChildren: './home/home.module#HomeModule'
 },{
+  path:'post',
+  loadChildren:'./post/post.module#PostModule'
+},{
   path:'echart',
   component:ChartComponent
+},{
+  path:'manage',
+  loadChildren: './manage/manage.module#ManageModule'
 }]

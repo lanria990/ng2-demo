@@ -24,8 +24,6 @@ import {ChartService} from "./chart/chart.service";
     EqualValidator,
     EchartsAppDirective,
     ChartComponent
-    // LoginComponent,
-    // ForgetPwdComponent
   ],
   imports: [
     BrowserModule,

@@ -2,28 +2,26 @@ import { NgModule } from '@angular/core';
 import { ModalModule } from 'ng2-bootstrap';
 import { PaginationModule } from 'ng2-bootstrap';
 import { SharedModule } from './shared.module';
+import {PostTableComponent} from "../manage/post-table/post-table.component";
 
-// import { CommentTableComponent } from '../manage/comment-table/comment-table.component';
-// import { PostTableComponent } from '../manage/post-table/post-table.component';
+
 
 @NgModule({
-  imports:[ 
+  imports:[
     SharedModule,
     ModalModule.forRoot(),
   	PaginationModule.forRoot()
   ],
-  declarations:[ 
-  	// CommentTableComponent,
-  	// PostTableComponent
+  declarations:[
+    PostTableComponent
   ],
-  exports:[ 
+  exports:[
     ModalModule,
   	PaginationModule,
-  	// CommentTableComponent,
-  	// PostTableComponent
+    PostTableComponent
   ]
 })
 
 export class PostSharedModule {
-  
+
 }

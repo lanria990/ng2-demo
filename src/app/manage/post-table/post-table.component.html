@@ -1,22 +1,23 @@
 <div class="row">
+  <h1>标题，作者</h1>
   <div class="col-md-12">
     <div class="post-item-container">
-      <table class="table">
-        <thead>
-          <tr>
-            <th *ngfor="let th of config.columns ">
-              {{th.title}}
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let post of datas ">
-          <td *ngfor="let th of config.columns ">
-            {{post[th.key]}}
-          </td>
-        </tr>
-        </tbody>
-      </table>
+      <!--<table class="table">-->
+        <!--<thead>-->
+          <!--<tr>-->
+            <!--<th *ngfor="let th of config.columns ">-->
+              <!--{{th.title}}-->
+            <!--</th>-->
+          <!--</tr>-->
+        <!--</thead>-->
+        <!--<tbody>-->
+        <!--<tr *ngFor="let post of datas ">-->
+          <!--<td *ngfor="let th of config.columns ">-->
+            <!--{{post[th.key]}}-->
+          <!--</td>-->
+        <!--</tr>-->
+        <!--</tbody>-->
+      <!--</table>-->
     </div>
   </div>
 </div>

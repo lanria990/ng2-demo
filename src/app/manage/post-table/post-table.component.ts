@@ -1,5 +1,5 @@
-
 import {Component, OnInit} from "@angular/core";
+import {PostService} from "./post-table.service";
 @Component({
   selector:'post-table',
   templateUrl:'./post-table.component.html',
@@ -7,7 +7,7 @@ import {Component, OnInit} from "@angular/core";
 })
 
 export class PostTableComponent implements OnInit{
-  public  config={
+    config={
     columns :[{
       title: 'Age',
       dataIndex: 'age',
@@ -16,7 +16,7 @@ export class PostTableComponent implements OnInit{
   }
   public datas:Array<any>;
 
-  constructor(){}
+  constructor(public postService:PostService){}
   ngOnInit(){
    this.datas = [{
       key: '1',

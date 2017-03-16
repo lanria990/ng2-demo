@@ -34,3 +34,9 @@ node 版本需要 6.9.0+
 
 node-gyp 4.0 修改NVM_NODEJS_ORG_MIRROR 为 NODEJS_ORG_MIRROR变量，nvm安装报错，待发布新版本
 
+
+## 知识点
+
+route
+
+- loadChildren :'app/admin/admin.module#AdminModule' lazy load
